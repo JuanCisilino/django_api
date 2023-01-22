@@ -13,7 +13,7 @@ class Producto(models.Model):
     description = models.TextField()
     cost = models.DecimalField(max_digits=6,decimal_places=2)
     stock = models.IntegerField()
-    image = models.TextField()
+    image = models.CharField(max_length=300)
     company = models.CharField(max_length=30)
     isActive = models.BooleanField()
     type = models.CharField(max_length=30)
