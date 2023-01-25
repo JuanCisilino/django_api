@@ -1,7 +1,7 @@
 from django.db import models
 
 class Usuario(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(primary_key=True)
     nombre = models.CharField(max_length=30)
     rol = models.CharField(max_length=30)
     carrito = models.TextField()
