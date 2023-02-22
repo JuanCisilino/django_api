@@ -28,8 +28,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Usuario',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.EmailField(max_length=254)),
+                ('email', models.EmailField(max_length=254, primary_key=True)),
                 ('nombre', models.CharField(max_length=30)),
                 ('rol', models.CharField(max_length=30)),
                 ('carrito', models.TextField()),
