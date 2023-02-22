@@ -2,10 +2,10 @@ from django.urls import path
 from .views import ProductoList, UsuarioList, ProductoDetail, UsuarioDetail, home, PacienteListCreate, PacienteRetrieveUpdateDestroy, DoctorListCreate, DoctorRetrieveUpdateDestroy, HistoriasListCreate, HistoriasRetrieveUpdateDestroy, VademecumMarcaListCreate, VademecumGenericoListCreate
 
 urlpatterns = [
-    path('initProducts/',ProductoList.as_view()),
-    path('initUsers/',UsuarioList.as_view()),
-    path('users/<str:pk>',UsuarioDetail.as_view()),
-    path('prodById/<int:pk>',ProductoDetail.as_view()),
+    path('api/initProducts/',ProductoList.as_view()),
+    path('api/initUsers/',UsuarioList.as_view()),
+    path('api/users/<str:pk>',UsuarioDetail.as_view()),
+    path('api/prodById/<int:pk>',ProductoDetail.as_view()),
     path('api/pacientes/', PacienteListCreate.as_view(), name='Lista de Pacientes'),
     path('api/doctores/', DoctorListCreate.as_view(), name='Lista de Doctores'),
     path('api/paciente/<int:pk>/', PacienteRetrieveUpdateDestroy.as_view(), name='Paciente por DNI'),
