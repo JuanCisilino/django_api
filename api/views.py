@@ -72,4 +72,5 @@ def home(request):
 
 def token(request):
     user = User.objects.create_user('token_login', 'email@example.com', 'ribo1234')
+    user.save()
     return render(request, user)
