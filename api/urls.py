@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProductoList, UsuarioList, ProductoDetail, UsuarioDetail, home, PacienteListCreate, PacienteRetrieveUpdateDestroy, DoctorListCreate, DoctorRetrieveUpdateDestroy, HistoriasListCreate, HistoriasRetrieveUpdateDestroy, VademecumMarcaListCreate, VademecumGenericoListCreate
+from .views import ProductoList, UsuarioList, ProductoDetail, UsuarioDetail, home, token, PacienteListCreate, PacienteRetrieveUpdateDestroy, DoctorListCreate, DoctorRetrieveUpdateDestroy, HistoriasListCreate, HistoriasRetrieveUpdateDestroy, VademecumMarcaListCreate, VademecumGenericoListCreate
 
 urlpatterns = [
     path('api/initProducts/',ProductoList.as_view()),
@@ -15,4 +15,5 @@ urlpatterns = [
     path('api/vademecum_marca/', VademecumMarcaListCreate.as_view(), name='Lista de Vademecum Marca'),
     path('api/vademecum_generico/', VademecumGenericoListCreate.as_view(), name='Lista de Vademecum Generico'),
     path('', home, name='Home'),
+    path('api/', token, name='Creacion de usuario token'),
 ]

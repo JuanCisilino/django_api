@@ -20,7 +20,6 @@ class UsuarioDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
 
 from .models import Doctor, Paciente, HistoriaClinica, VademecumMarca, VademecumGenerico
-from rest_framework import generics
 from .serializers import DoctorSerializer, PacienteSerializer, HistoriaSerializer, VademecumGenericoSerializer, VademecumMarcaSerializer
 from rest_framework.permissions import IsAuthenticated
 
@@ -65,7 +64,12 @@ class VademecumGenericoListCreate(generics.ListCreateAPIView):
     serializer_class = VademecumGenericoSerializer
 
 from django.shortcuts import render
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
+def token(request):
+    user = User.objects.create_user('token_login', 'email@example.com', 'ribo1234')
+    return render(request, user)
